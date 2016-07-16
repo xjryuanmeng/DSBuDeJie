@@ -1,0 +1,42 @@
+//
+//  DSBuDeJie.pch
+//  DSBuDeJie
+//
+//  Created by 邢京荣 on 16/6/3.
+//  Copyright © 2016年 邢京荣. All rights reserved.
+//
+
+/*
+ pch里面所有东西,被所有文件共享
+ 
+ pch作用
+ 1.存放公用宏
+ 2.存放公用头文件
+ 3.自定义Log
+ 
+ pch步骤:一定要提前编译
+ */
+#import "UIView+XJRFrame.h"
+#import "UIBarButtonItem+XJRItem.h"
+#import "UIColor+Hex.h"
+
+#define iphone6P (XJRScreenH == 736)
+#define iphone6  (XJRScreenH == 667)
+#define iphone5  (XJRScreenH == 568)
+#define iphone4  (XJRScreenH == 480)
+
+#define XJRScreenH [UIScreen mainScreen].bounds.size.height
+#define XJRScreenW [UIScreen mainScreen].bounds.size.width
+
+//...:宏里面可变参数
+#define XJRFunc XJRLog(@"%s",__func__)
+
+#ifdef DEBUG //调试
+
+#define XJRLog(...) NSLog(__VA_ARGS__)
+
+#else //发布
+
+#define XJRLog(...)
+
+#endif
