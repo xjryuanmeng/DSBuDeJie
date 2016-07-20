@@ -14,14 +14,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eiK-fv-wtg">
-                        <rect key="frame" x="13" y="0.0" width="55" height="55"/>
+                        <rect key="frame" x="13" y="5" width="55" height="55"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="55" id="BBz-PL-AIn"/>
                             <constraint firstAttribute="width" constant="55" id="NQl-On-JG0"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQ6-iJ-Kd5">
-                        <rect key="frame" x="19" y="59" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQ6-iJ-Kd5">
+                        <rect key="frame" x="21" y="57" width="38" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -29,12 +29,17 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="eiK-fv-wtg" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="1Md-Ms-KXM"/>
                 <constraint firstItem="PQ6-iJ-Kd5" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="7as-9R-jRZ"/>
-                <constraint firstItem="eiK-fv-wtg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7cf-2x-pkK"/>
-                <constraint firstAttribute="bottom" secondItem="PQ6-iJ-Kd5" secondAttribute="bottom" id="7nU-6K-Dpb"/>
+                <constraint firstItem="eiK-fv-wtg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="7cf-2x-pkK"/>
+                <constraint firstAttribute="bottom" secondItem="PQ6-iJ-Kd5" secondAttribute="bottom" constant="5" id="7nU-6K-Dpb"/>
             </constraints>
+            <connections>
+                <outlet property="iconView" destination="eiK-fv-wtg" id="doO-nc-eXn"/>
+                <outlet property="nameView" destination="PQ6-iJ-Kd5" id="pbZ-D1-q5J"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class XJRSquareItem;
 @interface XJRSquareCell : UICollectionViewCell
-
+@property (nonatomic ,strong) XJRSquareItem *item;
 @end

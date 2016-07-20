@@ -50,6 +50,7 @@
 		35F786271D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F786261D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard */; };
 		35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F786661D3F5DE300E1ABF2 /* XJRSquareCell.m */; };
 		35F786691D3F5DE300E1ABF2 /* XJRSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35F786671D3F5DE300E1ABF2 /* XJRSquareCell.xib */; };
+		35F7866C1D3F686A00E1ABF2 /* XJRSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F7866B1D3F686A00E1ABF2 /* XJRSquareItem.m */; };
 		B6903972A7B40CACA8B1DAF4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F759F6EB8DBC843530BE71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,8 @@
 		35F786651D3F5DE300E1ABF2 /* XJRSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRSquareCell.h; sourceTree = "<group>"; };
 		35F786661D3F5DE300E1ABF2 /* XJRSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRSquareCell.m; sourceTree = "<group>"; };
 		35F786671D3F5DE300E1ABF2 /* XJRSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XJRSquareCell.xib; sourceTree = "<group>"; };
+		35F7866A1D3F686A00E1ABF2 /* XJRSquareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRSquareItem.h; sourceTree = "<group>"; };
+		35F7866B1D3F686A00E1ABF2 /* XJRSquareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRSquareItem.m; sourceTree = "<group>"; };
 		5DF29F9671ED47190C7FD057 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		90F759F6EB8DBC843530BE71 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF28E54EFCC85FF77A951338 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -384,6 +387,8 @@
 		356469FC1D002A8300A10BF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				35F7866A1D3F686A00E1ABF2 /* XJRSquareItem.h */,
+				35F7866B1D3F686A00E1ABF2 /* XJRSquareItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -699,6 +704,7 @@
 				35351F1E1D01E7B300CD379F /* UIBarButtonItem+XJRItem.m in Sources */,
 				35646A111D002B5F00A10BF9 /* XJRNewViewController.m in Sources */,
 				353C2ACB1D19613500961B15 /* XJRADViewController.m in Sources */,
+				35F7866C1D3F686A00E1ABF2 /* XJRSquareItem.m in Sources */,
 				35614DA71D27211B009116D2 /* XJRSubTagItem.m in Sources */,
 				35646A1D1D002D3B00A10BF9 /* XJRTabBarController.m in Sources */,
 				35646A171D002BB600A10BF9 /* XJRFriendTrendViewController.m in Sources */,

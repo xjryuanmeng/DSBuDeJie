@@ -19,11 +19,12 @@
 #import "UIView+XJRFrame.h"
 #import "UIBarButtonItem+XJRItem.h"
 #import "UIColor+Hex.h"
-
+#define XJRColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 #define iphone6P (XJRScreenH == 736)
 #define iphone6  (XJRScreenH == 667)
 #define iphone5  (XJRScreenH == 568)
 #define iphone4  (XJRScreenH == 480)
+#define XJRGlobleColor XJRColor(215, 215, 215);
 
 #define XJRScreenH [UIScreen mainScreen].bounds.size.height
 #define XJRScreenW [UIScreen mainScreen].bounds.size.width
