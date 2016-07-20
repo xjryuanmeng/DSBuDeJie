@@ -8,8 +8,10 @@
 
 #import "XJMeRTableViewController.h"
 #import "XJRSettingViewController.h"
+
+static NSString * const ID = @"cell";
 // 按钮选中状态 必须 手动设置
-@interface XJMeRTableViewController ()
+@interface XJMeRTableViewController () <UICollectionViewDataSource>
 
 @end
 
@@ -20,6 +22,43 @@
     self.view.backgroundColor = [UIColor purpleColor];
     //设置导航条的内容
     [self setupNavBar];
+    //设置footView
+    [self setupFootView];
+}
+/*
+ 1.UICollectionView初始化必须要设置布局
+ 2.cell必须注册
+ 3.自定义cell
+*/
+-(void)setupFootView{
+    //流水布局
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    CGFloat margin = 1;
+    NSInteger cols = 4;
+    //设置cell尺寸
+    CGFloat itemWH = (XJRScreenW - ((cols - 1) * margin)) / cols;
+    layout.itemSize = CGSizeMake(itemWH, itemWH);
+    //cell的间距
+    layout.minimumInteritemSpacing = margin;
+    layout.minimumLineSpacing = margin;
+    //创建collectionView
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 0, 300) collectionViewLayout:layout];
+    self.tableView.tableFooterView = collectionView;
+    // 设置数据源
+    collectionView.dataSource = self;
+    // 注册cell
+    //[collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
+    [collectionView registerNib:[UINib nibWithNibName:@"XJRSquareCell" bundle:nil] forCellWithReuseIdentifier:ID];
+}
+#pragma mark - UICollectionViewDataSource
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 10;
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor yellowColor];
+    return cell;
 }
 //设置导航条的内容
 -(void)setupNavBar{

@@ -47,6 +47,9 @@
 		35DA4B481D2A86B1003C87F1 /* XJRFastLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA4B471D2A86B1003C87F1 /* XJRFastLoginView.m */; };
 		35DA4B4A1D2A86C8003C87F1 /* XJRFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DA4B491D2A86C8003C87F1 /* XJRFastLoginView.xib */; };
 		35DA4B4D1D2A8E8D003C87F1 /* XJRFastLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA4B4C1D2A8E8D003C87F1 /* XJRFastLoginButton.m */; };
+		35F786271D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F786261D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard */; };
+		35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F786661D3F5DE300E1ABF2 /* XJRSquareCell.m */; };
+		35F786691D3F5DE300E1ABF2 /* XJRSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35F786671D3F5DE300E1ABF2 /* XJRSquareCell.xib */; };
 		B6903972A7B40CACA8B1DAF4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F759F6EB8DBC843530BE71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +121,10 @@
 		35DA4B491D2A86C8003C87F1 /* XJRFastLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XJRFastLoginView.xib; sourceTree = "<group>"; };
 		35DA4B4B1D2A8E8D003C87F1 /* XJRFastLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRFastLoginButton.h; sourceTree = "<group>"; };
 		35DA4B4C1D2A8E8D003C87F1 /* XJRFastLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRFastLoginButton.m; sourceTree = "<group>"; };
+		35F786261D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XJMeRTableViewController.storyboard; sourceTree = "<group>"; };
+		35F786651D3F5DE300E1ABF2 /* XJRSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRSquareCell.h; sourceTree = "<group>"; };
+		35F786661D3F5DE300E1ABF2 /* XJRSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRSquareCell.m; sourceTree = "<group>"; };
+		35F786671D3F5DE300E1ABF2 /* XJRSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XJRSquareCell.xib; sourceTree = "<group>"; };
 		5DF29F9671ED47190C7FD057 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		90F759F6EB8DBC843530BE71 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF28E54EFCC85FF77A951338 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -369,6 +376,7 @@
 			children = (
 				35646A181D002BD200A10BF9 /* XJMeRTableViewController.h */,
 				35646A191D002BD200A10BF9 /* XJMeRTableViewController.m */,
+				35F786261D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -383,6 +391,9 @@
 		356469FD1D002A8300A10BF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				35F786651D3F5DE300E1ABF2 /* XJRSquareCell.h */,
+				35F786661D3F5DE300E1ABF2 /* XJRSquareCell.m */,
+				35F786671D3F5DE300E1ABF2 /* XJRSquareCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -603,6 +614,7 @@
 				35614DAC1D27326B009116D2 /* XJRSubTagCell.xib in Resources */,
 				356469DC1CFFA9C500A10BF9 /* LaunchScreen.storyboard in Resources */,
 				35DA4B421D2A1555003C87F1 /* XJRLoginRegisterView.xib in Resources */,
+				35F786691D3F5DE300E1ABF2 /* XJRSquareCell.xib in Resources */,
 				353C2AD61D196BBF00961B15 /* LaunchImage-700-568h@2x.png in Resources */,
 				35DA4B4A1D2A86C8003C87F1 /* XJRFastLoginView.xib in Resources */,
 				353C2ADA1D196BBF00961B15 /* LaunchImage.png in Resources */,
@@ -615,6 +627,7 @@
 				356469D91CFFA9C500A10BF9 /* Assets.xcassets in Resources */,
 				35614DC01D277A2C009116D2 /* XJRFriendTrendViewController.xib in Resources */,
 				353C2ADB1D196BBF00961B15 /* LaunchImage@2x.png in Resources */,
+				35F786271D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +689,7 @@
 				35614DAB1D27326B009116D2 /* XJRSubTagCell.m in Sources */,
 				35614DBE1D276D84009116D2 /* UIColor+Hex.m in Sources */,
 				35351F171D018C6400CD379F /* XJRTabBar.m in Sources */,
+				35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */,
 				35DA4B481D2A86B1003C87F1 /* XJRFastLoginView.m in Sources */,
 				35646A1A1D002BD200A10BF9 /* XJMeRTableViewController.m in Sources */,
 				35DA4B451D2A7D2C003C87F1 /* UIImage+Antialias.m in Sources */,

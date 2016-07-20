@@ -91,7 +91,9 @@
     XJRNavigationController *nav3 = [[XJRNavigationController alloc]initWithRootViewController:friendTrendVc];
     [self addChildViewController:nav3];
     //我
-    XJMeRTableViewController * meVc = [[XJMeRTableViewController alloc]init];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"XJMeRTableViewController" bundle:nil];
+    XJMeRTableViewController * meVc = [storyboard instantiateInitialViewController];
+    //XJMeRTableViewController * meVc = [[XJMeRTableViewController alloc]init];
     XJRNavigationController *nav4 = [[XJRNavigationController alloc]initWithRootViewController:meVc];
     [self addChildViewController:nav4];
 }
