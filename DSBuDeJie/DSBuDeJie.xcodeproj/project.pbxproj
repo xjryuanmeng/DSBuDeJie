@@ -38,6 +38,9 @@
 		3577055E1D00F77900D89B90 /* UIImage+XJRRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 3577055D1D00F77900D89B90 /* UIImage+XJRRender.m */; };
 		35A0DB311D2691DE007BF158 /* XJRADItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A0DB301D2691DE007BF158 /* XJRADItem.m */; };
 		35B73A6F1D031C6000B7DFF5 /* XJRSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B73A6E1D031C6000B7DFF5 /* XJRSettingViewController.m */; };
+		35D70C391D41067F00D9C247 /* XJRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D70C371D41067F00D9C247 /* XJRWebViewController.m */; };
+		35D70C3A1D41067F00D9C247 /* XJRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D70C381D41067F00D9C247 /* XJRWebViewController.xib */; };
+		35D70C3C1D41091600D9C247 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D70C3B1D41091600D9C247 /* WebKit.framework */; };
 		35D94DE91D024FBE0037AF3D /* XJRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D94DE81D024FBE0037AF3D /* XJRNavigationController.m */; };
 		35DA4B3C1D2A0D59003C87F1 /* XJRLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA4B3A1D2A0D59003C87F1 /* XJRLoginRegisterViewController.m */; };
 		35DA4B3D1D2A0D59003C87F1 /* XJRLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DA4B3B1D2A0D59003C87F1 /* XJRLoginRegisterViewController.xib */; };
@@ -107,6 +110,10 @@
 		35A0DB301D2691DE007BF158 /* XJRADItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRADItem.m; sourceTree = "<group>"; };
 		35B73A6D1D031C6000B7DFF5 /* XJRSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRSettingViewController.h; sourceTree = "<group>"; };
 		35B73A6E1D031C6000B7DFF5 /* XJRSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRSettingViewController.m; sourceTree = "<group>"; };
+		35D70C361D41067F00D9C247 /* XJRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRWebViewController.h; sourceTree = "<group>"; };
+		35D70C371D41067F00D9C247 /* XJRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRWebViewController.m; sourceTree = "<group>"; };
+		35D70C381D41067F00D9C247 /* XJRWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XJRWebViewController.xib; sourceTree = "<group>"; };
+		35D70C3B1D41091600D9C247 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		35D94DE71D024FBE0037AF3D /* XJRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRNavigationController.h; sourceTree = "<group>"; };
 		35D94DE81D024FBE0037AF3D /* XJRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRNavigationController.m; sourceTree = "<group>"; };
 		35DA4B391D2A0D59003C87F1 /* XJRLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRLoginRegisterViewController.h; sourceTree = "<group>"; };
@@ -138,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D70C3C1D41091600D9C247 /* WebKit.framework in Frameworks */,
 				B6903972A7B40CACA8B1DAF4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +388,9 @@
 				35646A181D002BD200A10BF9 /* XJMeRTableViewController.h */,
 				35646A191D002BD200A10BF9 /* XJMeRTableViewController.m */,
 				35F786261D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard */,
+				35D70C361D41067F00D9C247 /* XJRWebViewController.h */,
+				35D70C371D41067F00D9C247 /* XJRWebViewController.m */,
+				35D70C381D41067F00D9C247 /* XJRWebViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -541,6 +552,7 @@
 		9DA895BDF4DE8523CFD8FF8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35D70C3B1D41091600D9C247 /* WebKit.framework */,
 				90F759F6EB8DBC843530BE71 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -618,6 +630,7 @@
 			files = (
 				35614DAC1D27326B009116D2 /* XJRSubTagCell.xib in Resources */,
 				356469DC1CFFA9C500A10BF9 /* LaunchScreen.storyboard in Resources */,
+				35D70C3A1D41067F00D9C247 /* XJRWebViewController.xib in Resources */,
 				35DA4B421D2A1555003C87F1 /* XJRLoginRegisterView.xib in Resources */,
 				35F786691D3F5DE300E1ABF2 /* XJRSquareCell.xib in Resources */,
 				353C2AD61D196BBF00961B15 /* LaunchImage-700-568h@2x.png in Resources */,
@@ -717,6 +730,7 @@
 				35646A0A1D002A8300A10BF9 /* AppDelegate.m in Sources */,
 				35A0DB311D2691DE007BF158 /* XJRADItem.m in Sources */,
 				35351F1A1D01D58600CD379F /* UIView+XJRFrame.m in Sources */,
+				35D70C391D41067F00D9C247 /* XJRWebViewController.m in Sources */,
 				35DA4B4D1D2A8E8D003C87F1 /* XJRFastLoginButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

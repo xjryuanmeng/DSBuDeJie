@@ -13,6 +13,7 @@
 #import "XJRSquareItem.h"
 #import "XJRSquareCell.h"
 #import <SafariServices/SafariServices.h>
+#import "XJRWebViewController.h"
 
 static NSString * const ID = @"cell";
 static NSInteger const cols = 4;
@@ -154,21 +155,28 @@ static CGFloat const margin = 1;
     //在当前应用打开网页,但是要有Safari功能,自己去写
     //iOS9 : SFSafariViewController :在当前应用打开网页,跟Safari同样的功能
     //第一步:导入 #import <SafariServices/SafariServices.h>
+    /*
     SFSafariViewController *safariVc = [[SFSafariViewController alloc]initWithURL:url];
     //处理Done按钮
     safariVc.delegate = self;
     [self.navigationController pushViewController:safariVc animated:YES];
     self.navigationController.navigationBarHidden = YES;
+     */
     //这句代码完美解决Done按钮的点击事件,无需设置代理,遵守协议,实现方法(代替设置代理的方法)
     //[self presentViewController:safariVc animated:YES completion:nil];
-    
+    // WKWebView:UIWebView升级版,监听进度条,数据缓存,iOS8才有
+    XJRWebViewController *webVc = [[XJRWebViewController alloc]init];
+    webVc.url = url;
+    [self.navigationController pushViewController:webVc animated:YES];
 }
 #pragma mark - SFSafariViewControllerDelegate
+/*
 -(void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBarHidden = NO;
     //NSLog(@"点击了done按钮");
 }
+*/
 //设置导航条的内容
 -(void)setupNavBar{
     //右边边
