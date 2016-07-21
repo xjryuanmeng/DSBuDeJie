@@ -31,6 +31,7 @@ static CGFloat const margin = 1;
  1.collectionView高度 -> cell行数
  2.collectionView不能滚动
  */
+//处理cell间距
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.view.backgroundColor = [UIColor purpleColor];
@@ -40,7 +41,21 @@ static CGFloat const margin = 1;
     [self setupFootView];
     //加载数据
     [self loadData];
+    //设置tableView组间距
+    //如果是分组样式,默认每一组都会有头部间距和尾部间距
+    self.tableView.sectionHeaderHeight = 0;
+    self.tableView.sectionFooterHeight = 10;
+    //设置顶部额外滚动区域-25
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
 }
+/*
+//只为验证tableView顶部多出的尺寸
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"%@",NSStringFromUIEdgeInsets(self.tableView.contentInset));
+    NSLog(@"%f",self.tableView.contentInset.top);
+}
+ */
 // 处理数据
 - (void)resolveData
 {
@@ -77,6 +92,7 @@ static CGFloat const margin = 1;
         NSInteger rows = (count - 1) / cols + 1;
         CGFloat collectionH = rows * itemWH + (rows - 1) * margin;
         self.collectionView.xjr_height = collectionH;
+        //NSLog(@"%f",collectionH);
         // 设置tableView滚动范围 => tableView滚动范围是系统会自动根据内容去计算
         self.tableView.tableFooterView = self.collectionView;
         //self.tableView.contentSize = CGSizeMake(0, CGRectGetMaxY(self.collectionView.frame));
@@ -99,8 +115,9 @@ static CGFloat const margin = 1;
     layout.minimumInteritemSpacing = margin;
     layout.minimumLineSpacing = margin;
     //创建collectionView
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 0, 845) collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:layout];
     _collectionView = collectionView;
+    //NSLog(@"%f",self.collectionView.xjr_height);
     collectionView.backgroundColor = XJRGlobleColor;
     self.tableView.tableFooterView = collectionView;
     // 设置数据源
@@ -108,7 +125,7 @@ static CGFloat const margin = 1;
     // 注册cell
     //[collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
     [collectionView registerNib:[UINib nibWithNibName:@"XJRSquareCell" bundle:nil] forCellWithReuseIdentifier:ID];
-    _collectionView.scrollEnabled = NO;
+    //_collectionView.scrollEnabled = NO;
 }
 #pragma mark - UICollectionViewDataSource
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

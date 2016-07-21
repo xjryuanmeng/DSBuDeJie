@@ -22,7 +22,7 @@
 }
 -(void)setXjr_height:(CGFloat)xjr_height{
     CGRect rect = self.frame;
-    rect.size.width = xjr_height;
+    rect.size.height = xjr_height;
     self.frame = rect;
 }
 -(CGFloat)xjr_x{
