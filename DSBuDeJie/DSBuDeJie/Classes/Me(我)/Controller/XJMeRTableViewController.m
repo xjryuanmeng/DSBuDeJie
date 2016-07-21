@@ -12,6 +12,7 @@
 #import <MJExtension/MJExtension.h>
 #import "XJRSquareItem.h"
 #import "XJRSquareCell.h"
+#import <SafariServices/SafariServices.h>
 
 static NSString * const ID = @"cell";
 static NSInteger const cols = 4;
@@ -19,7 +20,7 @@ static CGFloat const margin = 1;
 #define itemWH (XJRScreenW - ((cols - 1) * margin)) / cols
 // 按钮选中状态 必须 手动设置
 
-@interface XJMeRTableViewController()<UICollectionViewDataSource>
+@interface XJMeRTableViewController()<UICollectionViewDataSource,UICollectionViewDelegate,SFSafariViewControllerDelegate>
 
 @property (nonatomic ,strong) NSMutableArray *squareItems;
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -122,6 +123,7 @@ static CGFloat const margin = 1;
     self.tableView.tableFooterView = collectionView;
     // 设置数据源
     collectionView.dataSource = self;
+    collectionView.delegate = self;
     // 注册cell
     //[collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
     [collectionView registerNib:[UINib nibWithNibName:@"XJRSquareCell" bundle:nil] forCellWithReuseIdentifier:ID];
@@ -136,6 +138,36 @@ static CGFloat const margin = 1;
     cell.item = self.squareItems[indexPath.row];
     //cell.backgroundColor = [UIColor yellowColor];
     return cell;
+}
+#pragma mark -UICollectionViewDelegate
+//点击cell就会调用
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    //获取模型
+    XJRSquareItem *item = self.squareItems[indexPath.row];
+    if (![item.url containsString:@"http"]) return;
+    NSURL *url = [NSURL URLWithString:item.url];
+    //UIWebView :在当前应用打开
+    //UIWebView没有这些功能,必须手动去实现,进度条做不了.
+    //Safari:跳转到Safari应用,离开当前应用
+    //safar:自带很多功能,前进.后退,刷新,进度条,网址
+    
+    //在当前应用打开网页,但是要有Safari功能,自己去写
+    //iOS9 : SFSafariViewController :在当前应用打开网页,跟Safari同样的功能
+    //第一步:导入 #import <SafariServices/SafariServices.h>
+    SFSafariViewController *safariVc = [[SFSafariViewController alloc]initWithURL:url];
+    //处理Done按钮
+    safariVc.delegate = self;
+    [self.navigationController pushViewController:safariVc animated:YES];
+    self.navigationController.navigationBarHidden = YES;
+    //这句代码完美解决Done按钮的点击事件,无需设置代理,遵守协议,实现方法(代替设置代理的方法)
+    //[self presentViewController:safariVc animated:YES completion:nil];
+    
+}
+#pragma mark - SFSafariViewControllerDelegate
+-(void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
+    [self.navigationController popViewControllerAnimated:YES];
+    self.navigationController.navigationBarHidden = NO;
+    //NSLog(@"点击了done按钮");
 }
 //设置导航条的内容
 -(void)setupNavBar{
