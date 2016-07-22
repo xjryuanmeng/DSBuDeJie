@@ -50,6 +50,7 @@
 		35DA4B481D2A86B1003C87F1 /* XJRFastLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA4B471D2A86B1003C87F1 /* XJRFastLoginView.m */; };
 		35DA4B4A1D2A86C8003C87F1 /* XJRFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DA4B491D2A86C8003C87F1 /* XJRFastLoginView.xib */; };
 		35DA4B4D1D2A8E8D003C87F1 /* XJRFastLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA4B4C1D2A8E8D003C87F1 /* XJRFastLoginButton.m */; };
+		35F078221D4271FC002EA43C /* XJRFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F078211D4271FC002EA43C /* XJRFileManager.m */; };
 		35F786271D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F786261D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard */; };
 		35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F786661D3F5DE300E1ABF2 /* XJRSquareCell.m */; };
 		35F786691D3F5DE300E1ABF2 /* XJRSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35F786671D3F5DE300E1ABF2 /* XJRSquareCell.xib */; };
@@ -129,6 +130,8 @@
 		35DA4B491D2A86C8003C87F1 /* XJRFastLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XJRFastLoginView.xib; sourceTree = "<group>"; };
 		35DA4B4B1D2A8E8D003C87F1 /* XJRFastLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRFastLoginButton.h; sourceTree = "<group>"; };
 		35DA4B4C1D2A8E8D003C87F1 /* XJRFastLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRFastLoginButton.m; sourceTree = "<group>"; };
+		35F078201D4271FC002EA43C /* XJRFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRFileManager.h; sourceTree = "<group>"; };
+		35F078211D4271FC002EA43C /* XJRFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRFileManager.m; sourceTree = "<group>"; };
 		35F786261D3F544C00E1ABF2 /* XJMeRTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XJMeRTableViewController.storyboard; sourceTree = "<group>"; };
 		35F786651D3F5DE300E1ABF2 /* XJRSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRSquareCell.h; sourceTree = "<group>"; };
 		35F786661D3F5DE300E1ABF2 /* XJRSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRSquareCell.m; sourceTree = "<group>"; };
@@ -244,6 +247,7 @@
 		356469ED1D002A8300A10BF9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				35F0781E1D4271D6002EA43C /* Tool(业务类) */,
 				353C2AC41D19610D00961B15 /* AD(广告) */,
 				35B73A691D031BC600B7DFF5 /* Setting(设置) */,
 				356469F61D002A8300A10BF9 /* Main(主要) */,
@@ -549,6 +553,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		35F0781E1D4271D6002EA43C /* Tool(业务类) */ = {
+			isa = PBXGroup;
+			children = (
+				35F0781F1D4271D6002EA43C /* File */,
+			);
+			path = "Tool(业务类)";
+			sourceTree = "<group>";
+		};
+		35F0781F1D4271D6002EA43C /* File */ = {
+			isa = PBXGroup;
+			children = (
+				35F078201D4271FC002EA43C /* XJRFileManager.h */,
+				35F078211D4271FC002EA43C /* XJRFileManager.m */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		9DA895BDF4DE8523CFD8FF8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +729,7 @@
 				35614DBE1D276D84009116D2 /* UIColor+Hex.m in Sources */,
 				35351F171D018C6400CD379F /* XJRTabBar.m in Sources */,
 				35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */,
+				35F078221D4271FC002EA43C /* XJRFileManager.m in Sources */,
 				35DA4B481D2A86B1003C87F1 /* XJRFastLoginView.m in Sources */,
 				35646A1A1D002BD200A10BF9 /* XJMeRTableViewController.m in Sources */,
 				35DA4B451D2A7D2C003C87F1 /* UIImage+Antialias.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "XJRSettingViewController.h"
 #import <SDImageCache.h>
+#import "XJRFileManager.h"
 #define cachePath  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0]
 static NSString * const ID = @"cell";
 @interface XJRSettingViewController ()
@@ -73,6 +74,7 @@ static NSString * const ID = @"cell";
 //点击cell就会调用
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //清空缓存
+    /*
     //获取Cache文件下所有文件
     //获取文件夹下一级目录
     NSArray *subpaths = [[NSFileManager defaultManager]contentsOfDirectoryAtPath:cachePath error:nil];
@@ -81,6 +83,8 @@ static NSString * const ID = @"cell";
         //指定文件路径清空
         [[NSFileManager defaultManager]removeItemAtPath:filePath error:nil];
     }
+    */
+    [XJRFileManager removeDirectoryPath:cachePath];
     //刷新表格
     [self.tableView reloadData];
 }
@@ -91,7 +95,7 @@ static NSString * const ID = @"cell";
     NSLog(@"%@",cachePath);
     // b ->b / 1000 KB ->KB / 1000 MB
     //获取文件夹尺寸
-    NSInteger totalSize = [self getDirectorySize:cachePath];
+    NSInteger totalSize = [XJRFileManager getDirectorySize:cachePath];
     NSString *str = @"清除缓存";
     if (totalSize > 1000 * 1000) {//MB
         CGFloat totalSizeF = totalSize / 1000.0 / 1000.0;
@@ -104,6 +108,8 @@ static NSString * const ID = @"cell";
     }
     return str;
 }
+// 业务类:专门搞一个类 处理某些业务 网络处理工具类,数据缓存,文件尺寸
+/*
 //获取文件尺寸
 -(NSInteger)getDirectorySize:(NSString *)directoryPath{
     //获取Cache文件路径
@@ -140,4 +146,5 @@ static NSString * const ID = @"cell";
     //NSLog(@"%lld",[attr fileSize]);
     return totalSize;
 }
+*/
 @end
