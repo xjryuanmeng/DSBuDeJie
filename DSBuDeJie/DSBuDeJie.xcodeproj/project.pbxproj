@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3533C5A71D42FD1100CAC323 /* XJRTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */; };
+		3533C5AA1D43C10800CAC323 /* XJRAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5A91D43C10800CAC323 /* XJRAllViewController.m */; };
+		3533C5AD1D43C12D00CAC323 /* XJRPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5AC1D43C12D00CAC323 /* XJRPictureViewController.m */; };
+		3533C5B01D43C16000CAC323 /* XJRVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5AF1D43C16000CAC323 /* XJRVideoViewController.m */; };
+		3533C5B31D43C18600CAC323 /* XJRVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5B21D43C18600CAC323 /* XJRVoiceViewController.m */; };
+		3533C5B61D43C1C100CAC323 /* XJRWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5B51D43C1C100CAC323 /* XJRWordViewController.m */; };
 		35351F171D018C6400CD379F /* XJRTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 35351F161D018C6400CD379F /* XJRTabBar.m */; };
 		35351F1A1D01D58600CD379F /* UIView+XJRFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 35351F191D01D58600CD379F /* UIView+XJRFrame.m */; };
 		35351F1E1D01E7B300CD379F /* UIBarButtonItem+XJRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35351F1D1D01E7B300CD379F /* UIBarButtonItem+XJRItem.m */; };
@@ -62,6 +67,16 @@
 /* Begin PBXFileReference section */
 		3533C5A51D42FD1100CAC323 /* XJRTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRTitleButton.h; sourceTree = "<group>"; };
 		3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRTitleButton.m; sourceTree = "<group>"; };
+		3533C5A81D43C10800CAC323 /* XJRAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRAllViewController.h; sourceTree = "<group>"; };
+		3533C5A91D43C10800CAC323 /* XJRAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRAllViewController.m; sourceTree = "<group>"; };
+		3533C5AB1D43C12D00CAC323 /* XJRPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRPictureViewController.h; sourceTree = "<group>"; };
+		3533C5AC1D43C12D00CAC323 /* XJRPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRPictureViewController.m; sourceTree = "<group>"; };
+		3533C5AE1D43C16000CAC323 /* XJRVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRVideoViewController.h; sourceTree = "<group>"; };
+		3533C5AF1D43C16000CAC323 /* XJRVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRVideoViewController.m; sourceTree = "<group>"; };
+		3533C5B11D43C18600CAC323 /* XJRVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRVoiceViewController.h; sourceTree = "<group>"; };
+		3533C5B21D43C18600CAC323 /* XJRVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRVoiceViewController.m; sourceTree = "<group>"; };
+		3533C5B41D43C1C100CAC323 /* XJRWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRWordViewController.h; sourceTree = "<group>"; };
+		3533C5B51D43C1C100CAC323 /* XJRWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRWordViewController.m; sourceTree = "<group>"; };
 		35351F151D018C6400CD379F /* XJRTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRTabBar.h; sourceTree = "<group>"; };
 		35351F161D018C6400CD379F /* XJRTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRTabBar.m; sourceTree = "<group>"; };
 		35351F181D01D58600CD379F /* UIView+XJRFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XJRFrame.h"; sourceTree = "<group>"; };
@@ -279,6 +294,16 @@
 			children = (
 				35646A0C1D002B3E00A10BF9 /* XJREssenceViewController.h */,
 				35646A0D1D002B3E00A10BF9 /* XJREssenceViewController.m */,
+				3533C5A81D43C10800CAC323 /* XJRAllViewController.h */,
+				3533C5A91D43C10800CAC323 /* XJRAllViewController.m */,
+				3533C5AB1D43C12D00CAC323 /* XJRPictureViewController.h */,
+				3533C5AC1D43C12D00CAC323 /* XJRPictureViewController.m */,
+				3533C5AE1D43C16000CAC323 /* XJRVideoViewController.h */,
+				3533C5AF1D43C16000CAC323 /* XJRVideoViewController.m */,
+				3533C5B11D43C18600CAC323 /* XJRVoiceViewController.h */,
+				3533C5B21D43C18600CAC323 /* XJRVoiceViewController.m */,
+				3533C5B41D43C1C100CAC323 /* XJRWordViewController.h */,
+				3533C5B51D43C1C100CAC323 /* XJRWordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -734,17 +759,21 @@
 				35614DBE1D276D84009116D2 /* UIColor+Hex.m in Sources */,
 				35351F171D018C6400CD379F /* XJRTabBar.m in Sources */,
 				3533C5A71D42FD1100CAC323 /* XJRTitleButton.m in Sources */,
+				3533C5AD1D43C12D00CAC323 /* XJRPictureViewController.m in Sources */,
 				35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */,
 				35F078221D4271FC002EA43C /* XJRFileManager.m in Sources */,
 				35DA4B481D2A86B1003C87F1 /* XJRFastLoginView.m in Sources */,
 				35646A1A1D002BD200A10BF9 /* XJMeRTableViewController.m in Sources */,
+				3533C5AA1D43C10800CAC323 /* XJRAllViewController.m in Sources */,
 				35DA4B451D2A7D2C003C87F1 /* UIImage+Antialias.m in Sources */,
 				35646A0E1D002B3E00A10BF9 /* XJREssenceViewController.m in Sources */,
 				35646A0B1D002A8300A10BF9 /* main.m in Sources */,
 				35DA4B401D2A151D003C87F1 /* XJRLoginRegisterView.m in Sources */,
 				35351F1E1D01E7B300CD379F /* UIBarButtonItem+XJRItem.m in Sources */,
 				35646A111D002B5F00A10BF9 /* XJRNewViewController.m in Sources */,
+				3533C5B31D43C18600CAC323 /* XJRVoiceViewController.m in Sources */,
 				353C2ACB1D19613500961B15 /* XJRADViewController.m in Sources */,
+				3533C5B61D43C1C100CAC323 /* XJRWordViewController.m in Sources */,
 				35F7866C1D3F686A00E1ABF2 /* XJRSquareItem.m in Sources */,
 				35614DA71D27211B009116D2 /* XJRSubTagItem.m in Sources */,
 				35646A1D1D002D3B00A10BF9 /* XJRTabBarController.m in Sources */,
@@ -755,6 +784,7 @@
 				35DA4B3C1D2A0D59003C87F1 /* XJRLoginRegisterViewController.m in Sources */,
 				35B73A6F1D031C6000B7DFF5 /* XJRSettingViewController.m in Sources */,
 				35D94DE91D024FBE0037AF3D /* XJRNavigationController.m in Sources */,
+				3533C5B01D43C16000CAC323 /* XJRVideoViewController.m in Sources */,
 				35646A0A1D002A8300A10BF9 /* AppDelegate.m in Sources */,
 				35A0DB311D2691DE007BF158 /* XJRADItem.m in Sources */,
 				35351F1A1D01D58600CD379F /* UIView+XJRFrame.m in Sources */,

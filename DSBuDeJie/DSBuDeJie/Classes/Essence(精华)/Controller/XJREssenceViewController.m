@@ -9,7 +9,14 @@
 #import "XJREssenceViewController.h"
 #import "XJRTitleButton.h"
 
-@interface XJREssenceViewController ()
+#import "XJRAllViewController.h"
+#import "XJRVideoViewController.h"
+#import "XJRVoiceViewController.h"
+#import "XJRPictureViewController.h"
+#import "XJRWordViewController.h"
+
+@interface XJREssenceViewController ()// <UITableViewDataSource, UITableViewDelegate>
+
 /** 标题栏 */
 @property (nonatomic, weak) UIView *titlesView;
 /** 上一次点击的标题按钮 */
@@ -25,10 +32,23 @@
     //self.view.backgroundColor = [UIColor redColor];
     //设置导航条的内容
     [self setupNavBar];
+    // 初始化子控制器
+    [self setupChildVcs];
     //scrollView
     [self setupScrollView];
     //标题栏
     [self setupTitlesView];
+}
+/**
+ *  初始化子控制器
+ */
+- (void)setupChildVcs
+{
+    [self addChildViewController:[[XJRAllViewController alloc] init]];
+    [self addChildViewController:[[XJRVideoViewController alloc] init]];
+    [self addChildViewController:[[XJRVoiceViewController alloc] init]];
+    [self addChildViewController:[[XJRPictureViewController alloc] init]];
+    [self addChildViewController:[[XJRWordViewController alloc] init]];
 }
 /**
  *  scrollView
@@ -39,6 +59,27 @@
     scrollView.backgroundColor = XJRRandomColor;
     //scrollView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:scrollView];
+    // 添加5个模块
+    for (NSInteger i = 0; i < 5; i++) {
+        /*
+        UITableView *tableView = [[UITableView alloc] init];
+        tableView.backgroundColor = XJRRandomColor;
+        tableView.xjr_width = scrollView.xjr_width;
+        tableView.xjr_height = scrollView.xjr_height;
+        tableView.xjr_x = i * tableView.xjr_width;
+        tableView.dataSource = self;
+        tableView.delegate = self;
+        tableView.tag = i;
+        [scrollView addSubview:tableView];
+        */
+        UIView *childVcView = self.childViewControllers[i].view;
+        childVcView.xjr_x = i * scrollView.xjr_width;
+        [scrollView addSubview:childVcView];
+    }
+    
+    // 其他设置
+    scrollView.contentSize = CGSizeMake(5 * scrollView.xjr_width, 0);
+    scrollView.pagingEnabled = YES;
 }
 /**
  *  标题栏
@@ -163,6 +204,38 @@
 -(void)game{
     XJRLog(@"点击了此按钮");
 }
+#pragma mark - <UITableViewDataSource>
+/*
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (tableView.tag == 0) return 10;
+    if (tableView.tag == 1) return 30;
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell.backgroundColor = [UIColor clearColor];
+    }
+
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %zd", self.class, indexPath.row];
+
+    return cell;
+}
+
+#pragma mark - <UITableViewDelegate>
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView.tag == 0) {
+
+    }
+    XMGLog(@"点击第%zd个表格的第%zd行", tableView.tag, indexPath.row)
+}
+*/
 /*
  凡是NSDictionary *类型的attributes参数, 一般都有以下规律
  一.iOS7以前
