@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3533C5A71D42FD1100CAC323 /* XJRTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */; };
 		35351F171D018C6400CD379F /* XJRTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 35351F161D018C6400CD379F /* XJRTabBar.m */; };
 		35351F1A1D01D58600CD379F /* UIView+XJRFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 35351F191D01D58600CD379F /* UIView+XJRFrame.m */; };
 		35351F1E1D01E7B300CD379F /* UIBarButtonItem+XJRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35351F1D1D01E7B300CD379F /* UIBarButtonItem+XJRItem.m */; };
@@ -59,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3533C5A51D42FD1100CAC323 /* XJRTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRTitleButton.h; sourceTree = "<group>"; };
+		3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRTitleButton.m; sourceTree = "<group>"; };
 		35351F151D018C6400CD379F /* XJRTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRTabBar.h; sourceTree = "<group>"; };
 		35351F161D018C6400CD379F /* XJRTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRTabBar.m; sourceTree = "<group>"; };
 		35351F181D01D58600CD379F /* UIView+XJRFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XJRFrame.h"; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 		356469F11D002A8300A10BF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3533C5A51D42FD1100CAC323 /* XJRTitleButton.h */,
+				3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 				35614DAB1D27326B009116D2 /* XJRSubTagCell.m in Sources */,
 				35614DBE1D276D84009116D2 /* UIColor+Hex.m in Sources */,
 				35351F171D018C6400CD379F /* XJRTabBar.m in Sources */,
+				3533C5A71D42FD1100CAC323 /* XJRTitleButton.m in Sources */,
 				35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */,
 				35F078221D4271FC002EA43C /* XJRFileManager.m in Sources */,
 				35DA4B481D2A86B1003C87F1 /* XJRFastLoginView.m in Sources */,
