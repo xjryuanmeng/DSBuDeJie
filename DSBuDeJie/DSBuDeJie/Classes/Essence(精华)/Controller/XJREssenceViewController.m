@@ -54,6 +54,15 @@
  *  scrollView
  */
 -(void)setupScrollView {
+    /*
+    XJRLog(@"UITableViewController-%@",NSStringFromCGRect([[UITableViewController alloc]init].view.frame));
+    XJRLog(@"UIViewController-%@",NSStringFromCGRect([[UIViewController alloc]init].view.frame));
+   
+    //UITableViewController-{{0, 20}, {375, 647}}
+    //UIViewController-{{0, 0}, {375, 667}}
+    */
+    // 不要去自动调整scrollView的内边距
+    self.automaticallyAdjustsScrollViewInsets = NO;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = XJRRandomColor;
@@ -73,8 +82,13 @@
         [scrollView addSubview:tableView];
         */
         UIView *childVcView = self.childViewControllers[i].view;
-        childVcView.xjr_x = i * scrollView.xjr_width;
+        childVcView.frame = CGRectMake(i * scrollView.xjr_width, 0, scrollView.xjr_width, scrollView.xjr_height);
+        //一下设置虽然不会被挡住,但是没有全屏穿透效果
+        //childVcView.frame = CGRectMake(i * scrollView.xmg_width, 99, scrollView.xmg_width, scrollView.xmg_height - 99 - 49);
+        //childVcView.xjr_x = i * scrollView.xjr_width;
         [scrollView addSubview:childVcView];
+        //XJRLog(@"%@",NSStringFromCGRect(childVcView.frame));
+        //{{0, 20}, {375, 647}}
     }
     
     // 其他设置

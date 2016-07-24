@@ -17,7 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = XJRRandomColor;
+    self.tableView.backgroundColor = XJRRandomColor;
+    self.tableView.contentInset = UIEdgeInsetsMake(XJRNavBarMaxY + XJRTitlesViewH, 0, XJRTabBarH, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
 }
 
 #pragma mark - 数据源

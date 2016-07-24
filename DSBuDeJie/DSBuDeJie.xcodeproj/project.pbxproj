@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35157F6F1D449BB8000EA4D9 /* XJRConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35157F6E1D449BB8000EA4D9 /* XJRConst.m */; };
 		3533C5A71D42FD1100CAC323 /* XJRTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */; };
 		3533C5AA1D43C10800CAC323 /* XJRAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5A91D43C10800CAC323 /* XJRAllViewController.m */; };
 		3533C5AD1D43C12D00CAC323 /* XJRPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5AC1D43C12D00CAC323 /* XJRPictureViewController.m */; };
@@ -65,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35157F6D1D449BB8000EA4D9 /* XJRConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRConst.h; sourceTree = "<group>"; };
+		35157F6E1D449BB8000EA4D9 /* XJRConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRConst.m; sourceTree = "<group>"; };
 		3533C5A51D42FD1100CAC323 /* XJRTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRTitleButton.h; sourceTree = "<group>"; };
 		3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRTitleButton.m; sourceTree = "<group>"; };
 		3533C5A81D43C10800CAC323 /* XJRAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRAllViewController.h; sourceTree = "<group>"; };
@@ -496,6 +499,8 @@
 				35646A041D002A8300A10BF9 /* AppDelegate.m */,
 				35646A051D002A8300A10BF9 /* main.m */,
 				35351F1B1D01D87D00CD379F /* DSBuDeJie.pch */,
+				35157F6D1D449BB8000EA4D9 /* XJRConst.h */,
+				35157F6E1D449BB8000EA4D9 /* XJRConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -775,6 +780,7 @@
 				353C2ACB1D19613500961B15 /* XJRADViewController.m in Sources */,
 				3533C5B61D43C1C100CAC323 /* XJRWordViewController.m in Sources */,
 				35F7866C1D3F686A00E1ABF2 /* XJRSquareItem.m in Sources */,
+				35157F6F1D449BB8000EA4D9 /* XJRConst.m in Sources */,
 				35614DA71D27211B009116D2 /* XJRSubTagItem.m in Sources */,
 				35646A1D1D002D3B00A10BF9 /* XJRTabBarController.m in Sources */,
 				35646A171D002BB600A10BF9 /* XJRFriendTrendViewController.m in Sources */,
