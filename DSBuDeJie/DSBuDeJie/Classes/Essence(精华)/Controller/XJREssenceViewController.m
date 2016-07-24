@@ -15,7 +15,7 @@
 #import "XJRPictureViewController.h"
 #import "XJRWordViewController.h"
 
-@interface XJREssenceViewController ()// <UITableViewDataSource, UITableViewDelegate>
+@interface XJREssenceViewController () <UIScrollViewDelegate>// <UITableViewDataSource, UITableViewDelegate>
 
 /** 标题栏 */
 @property (nonatomic, weak) UIView *titlesView;
@@ -23,6 +23,8 @@
 @property (nonatomic, weak) XJRTitleButton *previousClickedTitleButton;
 /** 标题下划线 */
 @property (nonatomic, weak) UIView *titleUnderline;
+/** 用来显示所有子控制器view的scrollView */
+@property (nonatomic, weak) UIScrollView *scrollView;
 @end
 
 @implementation XJREssenceViewController
@@ -61,15 +63,21 @@
     //UITableViewController-{{0, 20}, {375, 647}}
     //UIViewController-{{0, 0}, {375, 667}}
     */
+    NSInteger count = self.childViewControllers.count;
     // 不要去自动调整scrollView的内边距
     self.automaticallyAdjustsScrollViewInsets = NO;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.delegate = self;
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = XJRRandomColor;
     //scrollView.backgroundColor = [UIColor greenColor];
+    self.scrollView = scrollView;
     [self.view addSubview:scrollView];
+    // 其他设置
+    scrollView.contentSize = CGSizeMake(5 * scrollView.xjr_width, 0);
+    scrollView.pagingEnabled = YES;
     // 添加5个模块
-    for (NSInteger i = 0; i < 5; i++) {
+    for (NSInteger i = 0; i < count; i++) {
         /*
         UITableView *tableView = [[UITableView alloc] init];
         tableView.backgroundColor = XJRRandomColor;
@@ -90,10 +98,6 @@
         //XJRLog(@"%@",NSStringFromCGRect(childVcView.frame));
         //{{0, 20}, {375, 647}}
     }
-    
-    // 其他设置
-    scrollView.contentSize = CGSizeMake(5 * scrollView.xjr_width, 0);
-    scrollView.pagingEnabled = YES;
 }
 /**
  *  标题栏
@@ -152,6 +156,8 @@
     
     for (NSInteger i = 0; i < count; i++) {
         XJRTitleButton *titleButton = [[XJRTitleButton alloc] init];
+        //绑定tag
+        titleButton.tag = i;
         [titleButton setTitle:titles[i] forState:UIControlStateNormal];
         [titleButton addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         titleButton.frame = CGRectMake(i * titleButtonW, 0, titleButtonW, titleButtonH);
@@ -186,13 +192,19 @@
     titleButton.selected = YES;
     self.previousClickedTitleButton = titleButton;
     
-    // 下划线
     [UIView animateWithDuration:0.25 animations:^{
         // self.titleUnderline.xmg_width = [titleButton.currentTitle sizeWithFont:titleButton.titleLabel.font].width;
         // self.titleUnderline.xmg_width = [titleButton.currentTitle sizeWithAttributes:@{NSFontAttributeName : titleButton.titleLabel.font}].width;
-        
+         // 下划线
         self.titleUnderline.xjr_width = titleButton.titleLabel.xjr_width + 10;
         self.titleUnderline.xjr_centerX = titleButton.xjr_centerX;
+        // 滑动scrollView到对应的子控制器界面
+        CGPoint offset = self.scrollView.contentOffset;
+        offset.x = titleButton.tag * self.scrollView.xjr_width;
+        self.scrollView.contentOffset = offset;
+        // self.scrollView.contentOffset = CGPointMake(titleButton.tag * self.scrollView.xjr_width, self.scrollView.contentOffset.y);
+        // NSInteger index = [self.titlesView.subviews indexOfObject:titleButton];
+        // self.scrollView.contentOffset = CGPointMake(index * self.scrollView.xjr_width, self.scrollView.contentOffset.y);
     }];
 
 }
@@ -259,5 +271,71 @@
  二.iOS7开始
  1.key都来源于NSAttributedString.h
  2.key的格式都是:NS***AttributeName
+ */
+#pragma mark - <UIScrollViewDelegate>
+/*
+ -[UIView setSelected:]: unrecognized selector sent to instance 0x7ff3f35b1070
+ 
+ -[XMGPerson length]: unrecognized selector sent to instance 0x7ff3f35b1070
+ 错误将XMGPerson当做NSString来使用,比如
+ id obj = [[XMGPerson alloc] init];
+ NSString *string = obj;
+ string.length;
+ 
+ -[XMGPerson count]: unrecognized selector sent to instance 0x7ff3f35b1070
+ id obj = [[XMGPerson alloc] init];
+ NSArray *array = obj;
+ array.count;
+ 
+ -[XMGPerson setObject:forKeyedSubscript:]: unrecognized selector sent to instance 0x7ff3f35b1070
+ 错误将XMGPerson当做NSMutableDictionary来使用
+ 
+ 规律: 方法名里面包含了Subscript的方法,一般都是集合的方法(比如字典\数组)
+ */
+/**
+ *  scrollView滑动完毕的时候调用(速度减为0的时候调用)
+ */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSInteger index = scrollView.contentOffset.x / scrollView.xjr_width;
+    XJRTitleButton *titleButton = self.titlesView.subviews[index];
+    //XJRTitleButton *titleButton = [self.titlesView viewWithTag:index];
+    [self titleButtonClick:titleButton];
+}
+
+/**
+ *  停止拖拽scrollView的时候调用(松开scrollView的时候调用)
+ */
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+//{
+//    XJRFunc
+//}
+
+// Decelerate : 减速
+// Accelerate : 加速
+
+// asc : 升序  1,2,3,4,5,6
+// desc : 降序 6,5,4,3,2,1
+
+/*
+ //递归查找
+ @implementation UIView
+ - (UIView *)viewWithTag:(NSInteger)tag
+ {
+ // 如果自己的tag符合要求, 就返回自己
+ if (self.tag == tag) return self;
+ 
+ // 遍历子控件,查找tag符合要求的子控件
+ for (UIView *subview in self.subviews) {
+ //        if (subview.tag == tag) return subview;
+ 
+ UIView *resultView = [subview viewWithTag:tag];
+ if (resultView) return resultView;
+ }
+ 
+ // 找不到符合要求的子控件
+ return nil;
+ }
+ @end
  */
 @end
