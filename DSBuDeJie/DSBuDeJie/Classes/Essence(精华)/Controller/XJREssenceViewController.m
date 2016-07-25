@@ -40,6 +40,10 @@
     [self setupScrollView];
     //标题栏
     [self setupTitlesView];
+    // 默认显示第0个子控制器的view
+    [self addChildVcViewIntoScrollView:0];
+    //[self addChildVcViewIntoScrollView];
+
 }
 /**
  *  初始化子控制器
@@ -74,21 +78,22 @@
     self.scrollView = scrollView;
     [self.view addSubview:scrollView];
     // 其他设置
-    scrollView.contentSize = CGSizeMake(5 * scrollView.xjr_width, 0);
+    scrollView.contentSize = CGSizeMake(count * scrollView.xjr_width, 0);
     scrollView.pagingEnabled = YES;
     // 添加5个模块
+    /*
     for (NSInteger i = 0; i < count; i++) {
-        /*
-        UITableView *tableView = [[UITableView alloc] init];
-        tableView.backgroundColor = XJRRandomColor;
-        tableView.xjr_width = scrollView.xjr_width;
-        tableView.xjr_height = scrollView.xjr_height;
-        tableView.xjr_x = i * tableView.xjr_width;
-        tableView.dataSource = self;
-        tableView.delegate = self;
-        tableView.tag = i;
-        [scrollView addSubview:tableView];
-        */
+        
+//        UITableView *tableView = [[UITableView alloc] init];
+//        tableView.backgroundColor = XJRRandomColor;
+//        tableView.xjr_width = scrollView.xjr_width;
+//        tableView.xjr_height = scrollView.xjr_height;
+//        tableView.xjr_x = i * tableView.xjr_width;
+//        tableView.dataSource = self;
+//        tableView.delegate = self;
+//        tableView.tag = i;
+//        [scrollView addSubview:tableView];
+        
         UIView *childVcView = self.childViewControllers[i].view;
         childVcView.frame = CGRectMake(i * scrollView.xjr_width, 0, scrollView.xjr_width, scrollView.xjr_height);
         //一下设置虽然不会被挡住,但是没有全屏穿透效果
@@ -98,6 +103,7 @@
         //XJRLog(@"%@",NSStringFromCGRect(childVcView.frame));
         //{{0, 20}, {375, 647}}
     }
+    */
 }
 /**
  *  标题栏
@@ -191,20 +197,31 @@
     // 新点击的按钮 -> 红色
     titleButton.selected = YES;
     self.previousClickedTitleButton = titleButton;
-    
+    NSInteger index = titleButton.tag;
     [UIView animateWithDuration:0.25 animations:^{
+        /*
         // self.titleUnderline.xmg_width = [titleButton.currentTitle sizeWithFont:titleButton.titleLabel.font].width;
         // self.titleUnderline.xmg_width = [titleButton.currentTitle sizeWithAttributes:@{NSFontAttributeName : titleButton.titleLabel.font}].width;
+        */
          // 下划线
         self.titleUnderline.xjr_width = titleButton.titleLabel.xjr_width + 10;
         self.titleUnderline.xjr_centerX = titleButton.xjr_centerX;
         // 滑动scrollView到对应的子控制器界面
         CGPoint offset = self.scrollView.contentOffset;
-        offset.x = titleButton.tag * self.scrollView.xjr_width;
+        offset.x = index * self.scrollView.xjr_width;
+        //offset.x = titleButton.tag * self.scrollView.xjr_width;
         self.scrollView.contentOffset = offset;
+        /*
         // self.scrollView.contentOffset = CGPointMake(titleButton.tag * self.scrollView.xjr_width, self.scrollView.contentOffset.y);
         // NSInteger index = [self.titlesView.subviews indexOfObject:titleButton];
         // self.scrollView.contentOffset = CGPointMake(index * self.scrollView.xjr_width, self.scrollView.contentOffset.y);
+        */
+    }completion:^(BOOL finished) {
+        // 添加index位置的子控制器view到scrollView中
+        [self addChildVcViewIntoScrollView:index];
+        // 添加子控制器view到scrollView中
+        //[self addChildVcViewIntoScrollView];
+
     }];
 
 }
@@ -229,6 +246,56 @@
  */
 -(void)game{
     XJRLog(@"点击了此按钮");
+}
+#pragma mark - 其他
+/**
+ *  添加index位置的子控制器view到scrollView中
+ */
+- (void)addChildVcViewIntoScrollView:(NSInteger)index
+{
+    /*
+    UIView *childVcView = self.childViewControllers[index].view;
+    childVcView.frame = CGRectMake(index * self.scrollView.xjr_width, 0, self.scrollView.xjr_width, self.scrollView.xjr_height);
+    [self.scrollView addSubview:childVcView];
+     */
+    // 取出index位置对应的子控制器
+    UIViewController *childVc = self.childViewControllers[index];
+    if (childVc.isViewLoaded) return;
+    //    if (childVc.view.superview) return;
+    //    if (childVc.view.window) return;
+    //    if ([self.scrollView.subviews containsObject:childVc.view]) return;
+    
+    // 设置frame
+    childVc.view.frame = CGRectMake(index * self.scrollView.xjr_width, 0, self.scrollView.xjr_width, self.scrollView.xjr_height);
+    // 添加
+    [self.scrollView addSubview:childVc.view];
+}
+/**
+ *  添加子控制器view到scrollView中
+ */
+- (void)addChildVcViewIntoScrollView
+{
+    NSInteger index = self.scrollView.contentOffset.x / self.scrollView.xjr_width;
+    UIView *childVcView = self.childViewControllers[index].view;
+    
+    childVcView.frame = self.scrollView.bounds;
+    /*
+    childVcView.frame = CGRectMake(self.scrollView.bounds.origin.x,
+                                       self.scrollView.bounds.origin.y,
+                                       self.scrollView.bounds.size.width,
+                                       self.scrollView.bounds.size.height);
+    
+    childVcView.frame = CGRectMake(self.scrollView.contentOffset.x,
+                                       self.scrollView.contentOffset.y,
+                                       self.scrollView.xjr_width,
+                                       self.scrollView.xjr_height);
+    
+    childVcView.frame = CGRectMake(index * self.scrollView.xjr_width,
+                                       0,
+                                       self.scrollView.xjr_width,
+                                       self.scrollView.xjr_height);
+    */
+    [self.scrollView addSubview:childVcView];
 }
 #pragma mark - <UITableViewDataSource>
 /*
