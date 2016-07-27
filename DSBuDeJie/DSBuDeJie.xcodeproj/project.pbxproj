@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		35157F6F1D449BB8000EA4D9 /* XJRConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35157F6E1D449BB8000EA4D9 /* XJRConst.m */; };
+		352758791D48F4CD001F0AC2 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 352758781D48F4CD001F0AC2 /* UITextField+Placeholder.m */; };
+		3527587C1D48F5AC001F0AC2 /* XJRLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3527587B1D48F5AC001F0AC2 /* XJRLoginTextField.m */; };
 		3533C5A71D42FD1100CAC323 /* XJRTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */; };
 		3533C5AA1D43C10800CAC323 /* XJRAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5A91D43C10800CAC323 /* XJRAllViewController.m */; };
 		3533C5AD1D43C12D00CAC323 /* XJRPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3533C5AC1D43C12D00CAC323 /* XJRPictureViewController.m */; };
@@ -68,6 +70,10 @@
 /* Begin PBXFileReference section */
 		35157F6D1D449BB8000EA4D9 /* XJRConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRConst.h; sourceTree = "<group>"; };
 		35157F6E1D449BB8000EA4D9 /* XJRConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRConst.m; sourceTree = "<group>"; };
+		352758771D48F4CD001F0AC2 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
+		352758781D48F4CD001F0AC2 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
+		3527587A1D48F5AC001F0AC2 /* XJRLoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRLoginTextField.h; sourceTree = "<group>"; };
+		3527587B1D48F5AC001F0AC2 /* XJRLoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRLoginTextField.m; sourceTree = "<group>"; };
 		3533C5A51D42FD1100CAC323 /* XJRTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRTitleButton.h; sourceTree = "<group>"; };
 		3533C5A61D42FD1100CAC323 /* XJRTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRTitleButton.m; sourceTree = "<group>"; };
 		3533C5A81D43C10800CAC323 /* XJRAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRAllViewController.h; sourceTree = "<group>"; };
@@ -368,6 +374,8 @@
 				35DA4B491D2A86C8003C87F1 /* XJRFastLoginView.xib */,
 				35DA4B4B1D2A8E8D003C87F1 /* XJRFastLoginButton.h */,
 				35DA4B4C1D2A8E8D003C87F1 /* XJRFastLoginButton.m */,
+				3527587A1D48F5AC001F0AC2 /* XJRLoginTextField.h */,
+				3527587B1D48F5AC001F0AC2 /* XJRLoginTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -551,6 +559,8 @@
 				35351F191D01D58600CD379F /* UIView+XJRFrame.m */,
 				35351F1C1D01E7B300CD379F /* UIBarButtonItem+XJRItem.h */,
 				35351F1D1D01E7B300CD379F /* UIBarButtonItem+XJRItem.m */,
+				352758771D48F4CD001F0AC2 /* UITextField+Placeholder.h */,
+				352758781D48F4CD001F0AC2 /* UITextField+Placeholder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -763,6 +773,7 @@
 				35614DAB1D27326B009116D2 /* XJRSubTagCell.m in Sources */,
 				35614DBE1D276D84009116D2 /* UIColor+Hex.m in Sources */,
 				35351F171D018C6400CD379F /* XJRTabBar.m in Sources */,
+				352758791D48F4CD001F0AC2 /* UITextField+Placeholder.m in Sources */,
 				3533C5A71D42FD1100CAC323 /* XJRTitleButton.m in Sources */,
 				3533C5AD1D43C12D00CAC323 /* XJRPictureViewController.m in Sources */,
 				35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */,
@@ -779,6 +790,7 @@
 				3533C5B31D43C18600CAC323 /* XJRVoiceViewController.m in Sources */,
 				353C2ACB1D19613500961B15 /* XJRADViewController.m in Sources */,
 				3533C5B61D43C1C100CAC323 /* XJRWordViewController.m in Sources */,
+				3527587C1D48F5AC001F0AC2 /* XJRLoginTextField.m in Sources */,
 				35F7866C1D3F686A00E1ABF2 /* XJRSquareItem.m in Sources */,
 				35157F6F1D449BB8000EA4D9 /* XJRConst.m in Sources */,
 				35614DA71D27211B009116D2 /* XJRSubTagItem.m in Sources */,

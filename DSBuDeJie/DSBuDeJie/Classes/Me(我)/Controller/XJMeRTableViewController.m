@@ -97,6 +97,8 @@ static CGFloat const margin = 1;
         //NSLog(@"%f",collectionH);
         // 设置tableView滚动范围 => tableView滚动范围是系统会自动根据内容去计算
         self.tableView.tableFooterView = self.collectionView;
+        // 重新计算contentSize
+        [self.tableView reloadData];
         //self.tableView.contentSize = CGSizeMake(0, CGRectGetMaxY(self.collectionView.frame));
         [responseObject writeToFile:@"/Users/xingjingrong/Desktop/GIT/GitHub/DSBuDeJie/DSBuDeJie/DSBuDeJie/Classes/Me(我)/square.plist" atomically:YES];
         //NSLog(@"%@",responseObject);
