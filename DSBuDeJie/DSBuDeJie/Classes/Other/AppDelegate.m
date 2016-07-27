@@ -30,11 +30,20 @@
  
  */
 @interface AppDelegate ()
-
+@property (nonatomic, strong) UIWindow *topWindow;
 @end
 
 @implementation AppDelegate
 // 如何判断UITabBarController里面有多少个子控制器,看下tabBar中有多少个按钮
+/**
+ *  可以在这个AppDelegate方法中监听到状态栏的点击
+ */
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if ([touches.anyObject locationInView:nil].y > 20) return;
+    
+    XJRLog(@"点击了状态栏");
+}
 // 程序启动的时候调用
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //进入广告界面
@@ -57,7 +66,26 @@
     // 3.显示窗口 makeKey:UIApplication主窗口
     // 窗口会把根控制器的view添加到窗口
     [self.window makeKeyAndVisible];
+    //购物车(红色浮动方块)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+            // UIWindowLevelNormal < UIWindowLevelStatusBar < UIWindowLevelAlert
+            // 级别越高的window越显示在上面
+            // 级别相等的window,后面显示的window显示在上面
+    
+            self.topWindow = [[UIWindow alloc] init];
+            // self.topWindow.frame = application.statusBarFrame;
+            self.topWindow.frame = CGRectMake(280, 500, 80, 80);
+            self.topWindow.backgroundColor = [UIColor redColor];
+            self.topWindow.windowLevel = UIWindowLevelAlert;
+            self.topWindow.hidden = NO;
+            [self.topWindow addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click)]];
+    });
     return YES;
 }
 
+- (void)click
+{
+    XJRFunc;
+}
 @end
