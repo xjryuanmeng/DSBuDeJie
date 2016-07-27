@@ -17,8 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //随机色
-    self.view.backgroundColor = XJRRandomColor;
+    self.view.backgroundColor = [UIColor brownColor];
     //self.view.backgroundColor = [UIColor blueColor];
     //设置导航条的内容
     [self setupNavBar];

@@ -119,6 +119,8 @@ static CGFloat const margin = 1;
     //创建collectionView
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:layout];
     _collectionView = collectionView;
+    //点击状态栏,使界面滑到最顶端
+    collectionView.scrollsToTop = NO;
     //NSLog(@"%f",self.collectionView.xjr_height);
     collectionView.backgroundColor = XJRGlobleColor;
     self.tableView.tableFooterView = collectionView;

@@ -72,9 +72,12 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.delegate = self;
+    // 点击状态栏时,这个scrollView不需要滚动到顶部
+    scrollView.scrollsToTop = NO;
     scrollView.frame = self.view.bounds;
-    scrollView.backgroundColor = XJRRandomColor;
-    //scrollView.backgroundColor = [UIColor greenColor];
+    //随机色
+    //scrollView.backgroundColor = XJRRandomColor;
+    scrollView.backgroundColor = [UIColor greenColor];
     self.scrollView = scrollView;
     [self.view addSubview:scrollView];
     // 其他设置
@@ -223,6 +226,25 @@
         //[self addChildVcViewIntoScrollView];
 
     }];
+    // 控制scrollView的scrollsToTop属性
+    for (NSInteger i = 0; i < self.childViewControllers.count; i++) {
+        UIViewController *childVc = self.childViewControllers[i];
+        
+        // 如果控制器的view没有被创建,跳过
+        if (!childVc.isViewLoaded) continue;
+        
+        // 如果控制器的view不是scrollView,就跳过
+        if (![childVc.view isKindOfClass:[UIScrollView class]]) continue;
+        
+        // 如果控制器的view是scrollView
+        UIScrollView *scrollView = (UIScrollView *)childVc.view;
+        scrollView.scrollsToTop = (i == index);
+        //        if (i == index) { // 被点击按钮对应的子控制器
+        //            scrollView.scrollsToTop = YES;
+        //        } else {
+        //            scrollView.scrollsToTop = NO;
+        //        }
+    }
 
 }
 /*
