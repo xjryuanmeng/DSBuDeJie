@@ -8,3 +8,6 @@ CGFloat const XJRTabBarH = 49;
 
 /** 标题栏的高度 */
 CGFloat const XJRTitlesViewH = 35;
+
+/** 请求路径 */
+NSString * const XJRRequestURL = @"http://api.budejie.com/api/api_open.php";

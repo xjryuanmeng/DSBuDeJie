@@ -28,6 +28,7 @@
 		353C2AD91D196BBF00961B15 /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 353C2AD21D196BBF00961B15 /* LaunchImage-800-Portrait-736h@3x.png */; };
 		353C2ADA1D196BBF00961B15 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 353C2AD31D196BBF00961B15 /* LaunchImage.png */; };
 		353C2ADB1D196BBF00961B15 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 353C2AD41D196BBF00961B15 /* LaunchImage@2x.png */; };
+		3555D9901D72CA370091410C /* XJRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3555D98F1D72CA370091410C /* XJRTopic.m */; };
 		35614DA41D271C3A009116D2 /* XJRSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35614DA31D271C3A009116D2 /* XJRSubTagViewController.m */; };
 		35614DA71D27211B009116D2 /* XJRSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35614DA61D27211B009116D2 /* XJRSubTagItem.m */; };
 		35614DAB1D27326B009116D2 /* XJRSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35614DA91D27326B009116D2 /* XJRSubTagCell.m */; };
@@ -103,6 +104,8 @@
 		353C2AD21D196BBF00961B15 /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
 		353C2AD31D196BBF00961B15 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		353C2AD41D196BBF00961B15 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		3555D98E1D72CA370091410C /* XJRTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRTopic.h; sourceTree = "<group>"; };
+		3555D98F1D72CA370091410C /* XJRTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRTopic.m; sourceTree = "<group>"; };
 		35614DA21D271C3A009116D2 /* XJRSubTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRSubTagViewController.h; sourceTree = "<group>"; };
 		35614DA31D271C3A009116D2 /* XJRSubTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRSubTagViewController.m; sourceTree = "<group>"; };
 		35614DA51D27211B009116D2 /* XJRSubTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRSubTagItem.h; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 		356469F01D002A8300A10BF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3555D98E1D72CA370091410C /* XJRTopic.h */,
+				3555D98F1D72CA370091410C /* XJRTopic.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -777,6 +782,7 @@
 				3533C5A71D42FD1100CAC323 /* XJRTitleButton.m in Sources */,
 				3533C5AD1D43C12D00CAC323 /* XJRPictureViewController.m in Sources */,
 				35F786681D3F5DE300E1ABF2 /* XJRSquareCell.m in Sources */,
+				3555D9901D72CA370091410C /* XJRTopic.m in Sources */,
 				35F078221D4271FC002EA43C /* XJRFileManager.m in Sources */,
 				35DA4B481D2A86B1003C87F1 /* XJRFastLoginView.m in Sources */,
 				35646A1A1D002BD200A10BF9 /* XJMeRTableViewController.m in Sources */,

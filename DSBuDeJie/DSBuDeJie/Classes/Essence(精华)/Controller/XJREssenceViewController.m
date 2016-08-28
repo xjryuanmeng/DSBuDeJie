@@ -74,6 +74,7 @@
     scrollView.delegate = self;
     // 点击状态栏时,这个scrollView不需要滚动到顶部
     scrollView.scrollsToTop = NO;
+    
     scrollView.frame = self.view.bounds;
     //随机色
     //scrollView.backgroundColor = XJRRandomColor;

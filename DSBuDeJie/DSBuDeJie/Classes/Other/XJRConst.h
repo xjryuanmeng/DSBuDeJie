@@ -8,3 +8,7 @@ UIKIT_EXTERN CGFloat const XJRTabBarH;
 
 /** 标题栏的高度 */
 UIKIT_EXTERN CGFloat const XJRTitlesViewH;
+
+
+/** 请求路径 */
+UIKIT_EXTERN NSString * const XJRRequestURL;
